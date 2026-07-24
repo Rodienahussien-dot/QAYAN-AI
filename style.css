@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #120d0b;
+    color: #f2e8dc;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================= COVER ================= */
+
+.cover-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #120d0b;
+}
+
+.cover-box {
+    width: 545px;
+    min-height: 915px;
+    padding: 240px 55px 60px;
+    background: linear-gradient(
+        135deg,
+        #17100d,
+        #3b2418
+    );
+}
+
+.small-title {
+    color: #bd9b78;
+    font-size: 13px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 42px;
+}
+
+.cover-box h1 {
+    font-size: 62px;
+    line-height: 1.08;
+    letter-spacing: 1px;
+    color: #f5eee5;
+}
+
+.description {
+    color: #c4ad98;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-top: 38px;
+}
+
+.main-button {
+    display: inline-block;
+    margin-top: 48px;
+    padding: 22px 35px;
+    background: #bd9873;
+    color: #17110e;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: #e1c4a3;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 80px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3a281e;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #bd9b78;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #cdb8a4;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.nav-links a:hover {
+    color: #f5eee5;
+}
+
+
+/* ================= CONTENT ================= */
+
+.page-content {
+    max-width: 850px;
+    margin: auto;
+    padding: 120px 30px;
+}
+
+.page-content h1,
+.form-page h1 {
+    font-size: 65px;
+    line-height: 1.05;
+    margin-bottom: 35px;
+}
+
+h1 span {
+    color: #bd9b78;
+}
+
+.page-text {
+    max-width: 650px;
+    color: #c3b1a2;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+
+/* ================= FORM ================= */
+
+.form-page {
+    max-width: 850px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+form {
+    max-width: 600px;
+    margin-top: 45px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 18px;
+    background: #211611;
+    border: 1px solid #634632;
+    color: #f5eee5;
+    font-size: 15px;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+button {
+    padding: 18px 30px;
+    border: none;
+    background: #bd9873;
+    color: #17110e;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-info {
+    display: flex;
+    gap: 60px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    color: #c3b1a2;
+    line-height: 2;
+}
+
+.contact-info strong {
+    color: #bd9b78;
+    letter-spacing: 2px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .cover-box {
+        width: 82%;
+        min-height: 915px;
+        padding: 240px 55px 50px;
+    }
+
+    .cover-box h1 {
+        font-size: 45px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 25px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .page-content h1,
+    .form-page h1 {
+        font-size: 45px;
+    }
+}
