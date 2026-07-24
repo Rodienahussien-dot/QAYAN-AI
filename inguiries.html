@@ -1,72 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QAYAN AI | Inquiries</title>
+    <title>الاستفسارات - Qayan AI</title>
+    <style>
+        /* إعادة ضبط العناصر لتجنب تأثير الملفات الأخرى */
+        #qayan-inquiries-page, 
+        #qayan-inquiries-page * {
+            box-sizing: border-box !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        #qayan-inquiries-page {
+            background-color: #0b0f19 !important;
+            color: #f3f4f6 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            min-height: 100vh !important;
+            padding: 20px !important;
+        }
+
+        .qayan-card {
+            background-color: #151c2c !important;
+            border: 1px solid #1f293d !important;
+            border-radius: 16px !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+            width: 100% !important;
+            max-width: 600px !important;
+            padding: 40px !important;
+        }
+
+        .qayan-header {
+            text-align: center !important;
+            margin-bottom: 30px !important;
+        }
+
+        .qayan-header h1 {
+            font-size: 2rem !important;
+            color: #ffffff !important;
+            margin-bottom: 8px !important;
+        }
+
+        .qayan-header h1 span {
+            color: #6366f1 !important;
+        }
+
+        .qayan-header p {
+            color: #9ca3af !important;
+            font-size: 0.95rem !important;
+        }
+
+        .qayan-group {
+            margin-bottom: 20px !important;
+        }
+
+        .qayan-group label {
+            display: block !important;
+            margin-bottom: 8px !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            color: #f3f4f6 !important;
+        }
+
+        .qayan-group input,
+        .qayan-group select,
+        .qayan-group textarea {
+            width: 100% !important;
+            padding: 12px 16px !important;
+            background-color: #0b0f19 !important;
+            border: 1px solid #1f293d !important;
+            border-radius: 8px !important;
+            color: #ffffff !important;
+            font-size: 1rem !important;
+        }
+
+        .qayan-group input:focus,
+        .qayan-group select:focus,
+        .qayan-group textarea:focus {
+            outline: none !important;
+            border-color: #6366f1 !important;
+        }
+
+        .qayan-group textarea {
+            resize: vertical !important;
+            min-height: 120px !important;
+        }
+
+        .qayan-btn {
+            width: 100% !important;
+            padding: 14px !important;
+            background-color: #6366f1 !important;
+            color: #ffffff !important;
+            border: none !important;
+            border-radius: 8px !important;
+            font-size: 1rem !important;
+            font-weight: bold !important;
+            cursor: pointer !important;
+        }
+
+        .qayan-btn:hover {
+            background-color: #4f46e5 !important;
+        }
+
+        .qayan-footer {
+            text-align: center !important;
+            margin-top: 25px !important;
+            font-size: 0.85rem !important;
+            color: #9ca3af !important;
+        }
+    </style>
 </head>
+<body id="qayan-inquiries-page">
 
-<body>
-
-    <nav class="navbar">
-
-        <div class="logo">QAYAN AI</div>
-
-        <div class="nav-links">
-            <a href="home.html">HOME</a>
-            <a href="about.html">ABOUT US</a>
-            <a href="inquiries.html">INQUIRIES</a>
-            <a href="contact.html">CONTACT US</a>
+    <div class="qayan-card">
+        <div class="qayan-header">
+            <h1><span>Qayan AI</span> | قسم الاستفسارات</h1>
+            <p>يسعدنا تواصلك معنا، يسعد فريقنا بالرد على جميع أسئلتك واقتراحاتك.</p>
         </div>
 
-    </nav>
+        <form action="#" method="POST">
+            <div class="qayan-group">
+                <label for="name">الاسم الكامل</label>
+                <input type="text" id="name" name="name" placeholder="أدخل اسمك الكريم" required>
+            </div>
 
+            <div class="qayan-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            </div>
 
-    <main class="form-page">
+            <div class="qayan-group">
+                <label for="type">نوع الاستفسار</label>
+                <select id="type" name="type" required>
+                    <option value="" disabled selected>اختر نوع الاستفسار</option>
+                    <option value="general">استفسار عام</option>
+                    <option value="technical">الدعم الفني والتقني</option>
+                    <option value="partnership">الشراكات والأعمال</option>
+                    <option value="sales">المبيعات والحلول الذكية</option>
+                </select>
+            </div>
 
-        <p class="small-title">QAYAN AI</p>
+            <div class="qayan-group">
+                <label for="message">رسالتك / استفسارك</label>
+                <textarea id="message" name="message" placeholder="اكتب تفاصيل استفسارك هنا..." required></textarea>
+            </div>
 
-        <h1>
-            Have a<br>
-            <span>Question?</span>
-        </h1>
-
-        <p class="page-text">
-            We would love to hear from you.
-            Send us your inquiry and our team will get back to you.
-        </p>
-
-
-        <form>
-
-            <input
-                type="text"
-                placeholder="Your Name"
-                required
-            >
-
-            <input
-                type="email"
-                placeholder="Your Email"
-                required
-            >
-
-            <textarea
-                placeholder="Write your inquiry here..."
-                required
-            ></textarea>
-
-            <button type="submit">
-                SEND INQUIRY →
-            </button>
-
+            <button type="submit" class="qayan-btn">إرسال الاستفسار</button>
         </form>
 
-    </main>
+        <div class="qayan-footer">
+            جميع الحقوق محفوظة © Qayan AI
+        </div>
+    </div>
 
 </body>
-
 </html>
