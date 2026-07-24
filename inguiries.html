@@ -1,160 +1,185 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الاستفسارات - Qayan AI</title>
+    <title>QAYAN AI | Inquiries</title>
     <style>
-        /* إعادة ضبط العناصر لتجنب تأثير الملفات الأخرى */
-        #qayan-inquiries-page, 
-        #qayan-inquiries-page * {
-            box-sizing: border-box !important;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
-        #qayan-inquiries-page {
-            background-color: #0b0f19 !important;
-            color: #f3f4f6 !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            min-height: 100vh !important;
-            padding: 20px !important;
+        body {
+            background-color: #0d0907; /* اللون البني الداكن الخاص بموقعك */
+            color: #e5d5c5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        .qayan-card {
-            background-color: #151c2c !important;
-            border: 1px solid #1f293d !important;
-            border-radius: 16px !important;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
-            width: 100% !important;
-            max-width: 600px !important;
-            padding: 40px !important;
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 80px;
+            background-color: #0d0907;
         }
 
-        .qayan-header {
-            text-align: center !important;
-            margin-bottom: 30px !important;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #d1b190;
         }
 
-        .qayan-header h1 {
-            font-size: 2rem !important;
-            color: #ffffff !important;
-            margin-bottom: 8px !important;
+        .nav-links a {
+            color: #a89a8e;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
         }
 
-        .qayan-header h1 span {
-            color: #6366f1 !important;
+        .nav-links a:hover, .nav-links a.active {
+            color: #d1b190;
         }
 
-        .qayan-header p {
-            color: #9ca3af !important;
-            font-size: 0.95rem !important;
+        /* Form Section */
+        .container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 20px;
+            width: 90%;
         }
 
-        .qayan-group {
-            margin-bottom: 20px !important;
+        .form-header {
+            margin-bottom: 30px;
         }
 
-        .qayan-group label {
-            display: block !important;
-            margin-bottom: 8px !important;
-            font-weight: 600 !important;
-            font-size: 0.9rem !important;
-            color: #f3f4f6 !important;
+        .form-header h1 {
+            font-size: 2.2rem;
+            color: #d1b190;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        .qayan-group input,
-        .qayan-group select,
-        .qayan-group textarea {
-            width: 100% !important;
-            padding: 12px 16px !important;
-            background-color: #0b0f19 !important;
-            border: 1px solid #1f293d !important;
-            border-radius: 8px !important;
-            color: #ffffff !important;
-            font-size: 1rem !important;
+        .form-header p {
+            color: #a89a8e;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        .qayan-group input:focus,
-        .qayan-group select:focus,
-        .qayan-group textarea:focus {
-            outline: none !important;
-            border-color: #6366f1 !important;
+        .form-group {
+            margin-bottom: 22px;
         }
 
-        .qayan-group textarea {
-            resize: vertical !important;
-            min-height: 120px !important;
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #d1b190;
+            text-transform: uppercase;
         }
 
-        .qayan-btn {
-            width: 100% !important;
-            padding: 14px !important;
-            background-color: #6366f1 !important;
-            color: #ffffff !important;
-            border: none !important;
-            border-radius: 8px !important;
-            font-size: 1rem !important;
-            font-weight: bold !important;
-            cursor: pointer !important;
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background-color: #16100c;
+            border: 1px solid #2e231c;
+            color: #e5d5c5;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
         }
 
-        .qayan-btn:hover {
-            background-color: #4f46e5 !important;
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #d1b190;
         }
 
-        .qayan-footer {
-            text-align: center !important;
-            margin-top: 25px !important;
-            font-size: 0.85rem !important;
-            color: #9ca3af !important;
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #d1b190; /* لون الزر النحاسي/الذهبي */
+            color: #0d0907;
+            border: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #b89877;
         }
     </style>
 </head>
-<body id="qayan-inquiries-page">
+<body>
 
-    <div class="qayan-card">
-        <div class="qayan-header">
-            <h1><span>Qayan AI</span> | قسم الاستفسارات</h1>
-            <p>يسعدنا تواصلك معنا، يسعد فريقنا بالرد على جميع أسئلتك واقتراحاتك.</p>
+    <!-- القائمة العلويّة -->
+    <nav>
+        <div class="logo">QAYAN AI</div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="inquiries.html" class="active">INQUIRIES</a>
+            <a href="contact.html">CONTACT US</a>
+        </div>
+    </nav>
+
+    <!-- نموذج الاستفسارات -->
+    <div class="container">
+        <div class="form-header">
+            <h1>INQUIRIES</h1>
+            <p>Have questions about our AI solutions? Send us your message below.</p>
         </div>
 
         <form action="#" method="POST">
-            <div class="qayan-group">
-                <label for="name">الاسم الكامل</label>
-                <input type="text" id="name" name="name" placeholder="أدخل اسمك الكريم" required>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
             </div>
 
-            <div class="qayan-group">
-                <label for="email">البريد الإلكتروني</label>
-                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
             </div>
 
-            <div class="qayan-group">
-                <label for="type">نوع الاستفسار</label>
-                <select id="type" name="type" required>
-                    <option value="" disabled selected>اختر نوع الاستفسار</option>
-                    <option value="general">استفسار عام</option>
-                    <option value="technical">الدعم الفني والتقني</option>
-                    <option value="partnership">الشراكات والأعمال</option>
-                    <option value="sales">المبيعات والحلول الذكية</option>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Select Inquiry Type</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="solutions">AI Solutions & Services</option>
+                    <option value="partnership">Partnership</option>
                 </select>
             </div>
 
-            <div class="qayan-group">
-                <label for="message">رسالتك / استفسارك</label>
-                <textarea id="message" name="message" placeholder="اكتب تفاصيل استفسارك هنا..." required></textarea>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
             </div>
 
-            <button type="submit" class="qayan-btn">إرسال الاستفسار</button>
+            <button type="submit" class="submit-btn">SEND MESSAGE →</button>
         </form>
-
-        <div class="qayan-footer">
-            جميع الحقوق محفوظة © Qayan AI
-        </div>
     </div>
 
 </body>
